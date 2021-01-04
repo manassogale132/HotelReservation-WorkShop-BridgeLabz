@@ -1,6 +1,6 @@
-Functions.java
- Functions
 Hotel.java
  Hotel
+Functions.java
+ Functions
 HotelReservation.java
  HotelReservation
