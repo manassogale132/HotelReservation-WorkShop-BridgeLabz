@@ -65,6 +65,27 @@ public class Functions {
         System.out.println("-NumberOfDaysStayed * WeekendRegularRate :" + hotel.getTotal() + "$");
 
     }
+    
+      //UC6  (Raiting)
+    public void findCheapestHotelRaitingForRegular(String startDateRange, String endDateRange) {                                                      //Find CheapestHotel best Rated based on weekendRegularRate
+
+        LocalDate startDate = LocalDate.parse(startDateRange, DateTimeFormatter.ofPattern("d-MMM-yyyy"));        //LocalDate class is used to parse the start and end date ranges with DateTimeFormater class to pass date format
+        LocalDate endDate = LocalDate.parse(endDateRange, DateTimeFormatter.ofPattern("d-MMM-yyyy"));
+
+        int numberOfDays = endDate.getDayOfMonth() - startDate.getDayOfMonth() + 1;                                 //To calculate Number of days stayed + the Raiting for eg-(5*90)
+
+        Optional<Hotel> cheapestHotel = this.myHotelList.stream().sorted(Comparator.comparing(Hotel::getWeekendRegularRate)).findFirst();  //Stream function on arrylist ie-myHotelList and storing in cheapestHotel
+
+        Hotel hotel = new Hotel();                                                                                  //Hotel Object
+        hotel.setHotelName(cheapestHotel.get().getHotelName());
+        hotel.setTotal(cheapestHotel.get().getWeekendRegularRate() * numberOfDays);                           //numberOfDays = for eg-(5*90)
+        hotel.setRaiting(cheapestHotel.get().getRaiting());                                                 //Setting rating for the cheapesthotel
+
+        System.out.println("-HotelName :" + hotel.getHotelName());                                        //Printing Hotel name and total Hotel rate for the date range
+        System.out.println("-NumberOfDaysStayed * WeekendRegularRate :" + hotel.getTotal() + "$");
+        System.out.println("-Raiting :" + hotel.getRaiting());
+
+    }
 
 
 }
