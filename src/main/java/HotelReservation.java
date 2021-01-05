@@ -15,6 +15,11 @@ public class HotelReservation {
         functions.addHotel();
         functions.showHotelInfo();
 
+        
+        System.out.println(" ");
+        System.out.println("*Cheapest Hotel Based on WeekdayRegularRate");
+        functions.findCheapestHotelOne("01-Jan-2021","05-Jan-2021");
+        System.out.println(" ");
       
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     }
