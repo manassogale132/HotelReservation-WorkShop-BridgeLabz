@@ -20,6 +20,13 @@ public class HotelReservation {
         System.out.println("*Cheapest Hotel Based on WeekdayRegularRate");
         functions.findCheapestHotelOne("01-Jan-2021","05-Jan-2021");
         System.out.println(" ");
+        
+        
+        System.out.println(" ");
+        System.out.println("*Cheapest Hotel Based on WeekendRegularRate");
+        functions.findCheapestHotelTwo("01-Jan-2021","05-Jan-2021");
+        System.out.println(" ");
+
       
         System.out.println("--------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     }
