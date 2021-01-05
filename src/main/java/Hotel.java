@@ -70,6 +70,7 @@ public class Hotel {
     public int getWeekdayRewardRate() {
         return weekdayRewardRate;
     }
+    
 
     public void setWeekdayRewardRate(int weekdayRewardRate) {
         this.weekdayRewardRate = weekdayRewardRate;
